@@ -1,0 +1,76 @@
+class aeroplane:
+    color = "black"
+    
+def drive(flying):
+        print("The aeroplane is flying")
+        
+my_aeroplane = aeroplane()
+print(my_aeroplane.color)
+my_aeroplane.flying()
+
+
+class aeroplane:
+    def __init__(flying, color, model):
+        flying.color = color    # Instance variable
+        flying.model = model    # Instance variable
+        
+aeroplane1 = aeroplane("blue", "jet")
+aeroplane2 = aeroplane("red", "jumbo")
+ 
+print(aeroplane1.color)
+print(aeroplane2.model)
+
+class Vehicle:
+    def __init__(self, wheels):
+        self.wheels = wheels
+        
+class Car(aeroplane):
+    pass      
+
+aeroplane = aeroplane(8)
+print(aeroplane.wheels) 
+
+class cow:
+    def speak(self):
+        return "Moow!"
+
+class wolf:
+    def speak(self):
+        return "Howl!"
+
+# Polymorphism in action
+for animal in [cow(), wolf()]:
+    print(animal.speak())
+    
+    
+# Define the Animal class with a generic move method
+class Animal:
+    def move(self):
+        print("Moving")
+
+# Define a Car class that inherits from Vehicle and overrides the move method
+class Car:
+    def move(self):
+        print("Driving 🚗")
+
+# Define a Plane class that inherits from Vehicle and overrides the move method
+class Plane:
+    def move(self):
+        print("Flying ✈️")
+
+# Define a Fish class that inherits from Animal and overrides the move method
+class Fish(Animal):
+    def move(self):
+        print("Swimming 🐠")
+
+# Create instances of each class
+car = Car()
+plane = Plane()
+fish = Fish()
+
+# Call the move method for each instance
+car.move()    # Output: Driving 🚗
+plane.move()  # Output: Flying ✈️
+fish.move()   # Output: Swimming 🐠
+
+
